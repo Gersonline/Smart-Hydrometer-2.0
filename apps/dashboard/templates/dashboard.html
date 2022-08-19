@@ -1,0 +1,1651 @@
+<!--
+=========================================================
+* * Black Dashboard - v1.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/black-dashboard
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/img/apple-icon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'images/pixel_water.png' %}">
+  <title>
+    Dashboard
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="{% static 'assets/css/black-dashboard.css' %}?v=1.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{% static 'assets/demo/demo.css' %}" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper">
+    <div class="sidebar">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+    -->
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a href="javascript:void(0)" class="simple-text logo-mini">
+            <b>FAM </b>
+          </a>
+          <a href="javascript:void(0)" class="simple-text logo-normal">
+            Smart Hydrometer
+          </a>
+        </div>
+        <ul class="nav">
+          <li class="active ">
+            <a href="./dashboard.html">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <!--<li>
+            <a href="./icons.html">
+              <i class="tim-icons icon-atom"></i>
+              <p>Icons</p>
+            </a>
+          </li>
+          <li>
+            <a href="./map.html">
+              <i class="tim-icons icon-pin"></i>
+              <p>Maps</p>
+            </a>
+          </li>
+          <li>
+            <a href="./notifications.html">
+              <i class="tim-icons icon-bell-55"></i>
+              <p>Notifications</p>
+            </a>
+          </li>-->
+          <li>
+            <a href="./user.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Perfil</p>
+            </a>
+          </li>
+          <!--<li>
+            <a href="./tables.html">
+              <i class="tim-icons icon-puzzle-10"></i>
+              <p>Table List</p>
+            </a>
+          </li>
+          <li>
+            <a href="./typography.html">
+              <i class="tim-icons icon-align-center"></i>
+              <p>Typography</p>
+            </a>
+          </li>
+          <li>
+            <a href="./rtl.html">
+              <i class="tim-icons icon-world"></i>
+              <p>RTL Support</p>
+            </a>
+          </li>
+          <li class="active-pro">
+            <a href="./upgrade.html">
+              <i class="tim-icons icon-spaceship"></i>
+              <p>Upgrade to PRO</p>
+            </a>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle d-inline">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav ml-auto">
+              <li class="search-bar input-group">
+                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
+                  <span class="d-lg-none d-md-block">Search</span>
+                </button>
+              </li>
+              <li class="dropdown nav-item">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <div class="notification d-none d-lg-block d-xl-block"></div>
+                  <i class="tim-icons icon-bell-55"></i>
+                  <p class="d-lg-none">
+                    Notificações
+                  </p>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
+                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">adm: Seus gastos estão acima da média.</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">adm: Sua fatura está atrasada!</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Noticia: Já ouviu falar no dia da terra?</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">adm: Bem-vindo ao Smart Hydrometer!</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">adm: Olá FAM!</a></li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <div class="photo">
+                    <img src="{% static 'assets/img/anime3.png' %}" alt="Profile Photo">
+                  </div>
+                  <b class="caret d-none d-lg-block d-xl-block"></b>
+                  <a href="logout/">
+                    <p class="d-lg-none">
+                      Log out
+                    </p>
+                  </a>
+                </a>
+                <ul class="dropdown-menu dropdown-navbar">
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
+                  <li class="dropdown-divider"></li>
+                  <li class="nav-link"><a href="logout" class="nav-item dropdown-item">Log out</a></li>
+                </ul>
+              </li>
+              <li class="separator d-lg-none"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-chart">
+              <div class="card-header ">
+                <div class="row">
+                  <div class="col-sm-6 text-left">
+                    <h5 class="card-category">Medições</h5>
+                    <h2 class="card-title">Meses</h2>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                      <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                        <input type="radio" name="options" checked>
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Litros</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-single-02"></i>
+                        </span>
+                      </label>
+                      <label class="btn btn-sm btn-primary btn-simple" id="1">
+                        <input type="radio" class="d-none d-sm-none" name="options">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">M³</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-gift-2"></i>
+                        </span>
+                      </label>
+                      <label class="btn btn-sm btn-primary btn-simple" id="2">
+                        <input type="radio" class="d-none" name="options">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Mililitros</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-tap-02"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="chartBig1"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card card-chart">
+              <div class="card-header">
+                <h5 class="card-category">Medições</h5>
+                <h3 class="card-title"><i class="tim-icons icon-sound-wave text-primary"></i> Semana </h3>
+              </div>
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="chartLinePurple"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card card-chart">
+              <div class="card-header">
+                <h5 class="card-category">Custos</h5>
+                <h3 id="custo" class="card-title">0,00</h3>
+              </div>
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="CountryChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card card-chart">
+              <div class="card-header">
+                <h5 class="card-category">Custos</h5>
+                <h3 class="card-title"><i class="tim-icons icon-wallet-43 text-success"></i> Economias </h3>
+              </div>
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="chartLineGreen"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="row">
+          <div class="col-lg-6 col-md-12">
+            <div class="card card-tasks">
+              <div class="card-header ">
+                <h6 class="title d-inline">Tasks(5)</h6>
+                <p class="card-category d-inline">today</p>
+                <div class="dropdown">
+                  <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown">
+                    <i class="tim-icons icon-settings-gear-63"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#pablo">Action</a>
+                    <a class="dropdown-item" href="#pablo">Another action</a>
+                    <a class="dropdown-item" href="#pablo">Something else</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body ">
+                <div class="table-full-width table-responsive">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">Update the Documentation</p>
+                          <p class="text-muted">Dwuamish Head, Seattle, WA 8:47 AM</p>
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="" checked="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">GDPR Compliance</p>
+                          <p class="text-muted">The GDPR is a regulation that requires businesses to protect the personal data and privacy of Europe citizens for transactions that occur within EU member states.</p>
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">Solve the issues</p>
+                          <p class="text-muted">Fifty percent of all respondents said they would be more likely to shop at a company </p>
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">Release v2.0.0</p>
+                          <p class="text-muted">Ra Ave SW, Seattle, WA 98116, SUA 11:19 AM</p>
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">Export the processed files</p>
+                          <p class="text-muted">The report also shows that consumers will not easily forgive a company once a breach exposing their personal data occurs. </p>
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="title">Arival at export process</p>
+                          <p class="text-muted">Capitol Hill, Seattle, WA 12:34 AM</p>
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                            <i class="tim-icons icon-pencil"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="card ">
+              <div class="card-header">
+                <h4 class="card-title"> Simple Table</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table tablesorter " id="">
+                    <thead class=" text-primary">
+                      <tr>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Country
+                        </th>
+                        <th>
+                          City
+                        </th>
+                        <th class="text-center">
+                          Salary
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Dakota Rice
+                        </td>
+                        <td>
+                          Niger
+                        </td>
+                        <td>
+                          Oud-Turnhout
+                        </td>
+                        <td class="text-center">
+                          $36,738
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Minerva Hooper
+                        </td>
+                        <td>
+                          Curaçao
+                        </td>
+                        <td>
+                          Sinaai-Waas
+                        </td>
+                        <td class="text-center">
+                          $23,789
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Sage Rodriguez
+                        </td>
+                        <td>
+                          Netherlands
+                        </td>
+                        <td>
+                          Baileux
+                        </td>
+                        <td class="text-center">
+                          $56,142
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Philip Chaney
+                        </td>
+                        <td>
+                          Korea, South
+                        </td>
+                        <td>
+                          Overland Park
+                        </td>
+                        <td class="text-center">
+                          $38,735
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Doris Greene
+                        </td>
+                        <td>
+                          Malawi
+                        </td>
+                        <td>
+                          Feldkirchen in Kärnten
+                        </td>
+                        <td class="text-center">
+                          $63,542
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Mason Porter
+                        </td>
+                        <td>
+                          Chile
+                        </td>
+                        <td>
+                          Gloucester
+                        </td>
+                        <td class="text-center">
+                          $78,615
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Jon Porter
+                        </td>
+                        <td>
+                          Portugal
+                        </td>
+                        <td>
+                          Gloucester
+                        </td>
+                        <td class="text-center">
+                          $98,615
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>-->
+      <footer class="footer">
+        <div class="container-fluid">
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link">
+                Creative Tim
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link">
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link">
+                Blog
+              </a>
+            </li>
+          </ul>
+          <div class="copyright">
+            ©
+            <script>
+              document.write(new Date().getFullYear())
+            </script>2018 made with <i class="tim-icons icon-heart-2"></i> by
+            <a href="javascript:void(0)" target="_blank">Creative Tim</a> for a better web.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="fixed-plugin">
+    <div class="dropdown show-dropdown">
+      <a href="#" data-toggle="dropdown">
+        <i class="fa fa-cog fa-2x"> </i>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="header-title"> Sidebar Background</li>
+        <li class="adjustments-line">
+          <a href="javascript:void(0)" class="switch-trigger background-color">
+            <div class="badge-colors text-center">
+              <span class="badge filter badge-primary active" data-color="primary"></span>
+              <span class="badge filter badge-info" data-color="blue"></span>
+              <span class="badge filter badge-success" data-color="green"></span>
+              <span class="badge filter badge-warning" data-color="orange"></span>
+            </div>
+            <div class="clearfix"></div>
+          </a>
+        </li>
+        <li class="adjustments-line text-center color-change">
+          <span class="color-label">LIGHT MODE</span>
+          <span class="badge light-badge mr-2"></span>
+          <span class="badge dark-badge ml-2"></span>
+          <span class="color-label">DARK MODE</span>
+        </li>
+        <li class="button-container">
+          <a href="https://www.creative-tim.com/product/black-dashboard" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
+          <a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block btn-round">
+            Documentation
+          </a>
+        </li>
+        <li class="header-title">Thank you for 95 shares!</li>
+        <li class="button-container text-center">
+          <button id="twitter" class="btn btn-round btn-info"><i class="fab fa-twitter"></i> &middot; 45</button>
+          <button id="facebook" class="btn btn-round btn-info"><i class="fab fa-facebook-f"></i> &middot; 50</button>
+          <br>
+          <br>
+          <a class="github-button" href="https://github.com/creativetimofficial/black-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="{% static 'assets/js/core/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/js/core/popper.min.js' %}"></script>
+  <script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+  <!--  Google Maps Plugin    -->
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="{% static 'assets/js/plugins/chartjs.min.js' %}"></script>
+  <!--  Notifications Plugin    -->
+  <script src="{% static 'assets/js/plugins/bootstrap-notify.js' %}"></script>
+  <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{% static 'assets/js/black-dashboard.min.js' %}?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+
+  <script>
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+        $navbar = $('.navbar');
+        $main_panel = $('.main-panel');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+        sidebar_mini_active = true;
+        white_color = false;
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+
+
+        $('.fixed-plugin a').click(function(event) {
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .background-color span').click(function() {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data', new_color);
+          }
+
+          if ($main_panel.length != 0) {
+            $main_panel.attr('data', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data', new_color);
+          }
+        });
+
+        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            sidebar_mini_active = false;
+            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+          } else {
+            $('body').addClass('sidebar-mini');
+            sidebar_mini_active = true;
+            blackDashboard.showSidebarMessage('Sidebar mini activated...');
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function() {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+        });
+
+        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (white_color == true) {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').removeClass('white-content');
+            }, 900);
+            white_color = false;
+          } else {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').addClass('white-content');
+            }, 900);
+
+            white_color = true;
+          }
+
+
+        });
+
+        $('.light-badge').click(function() {
+          $('body').addClass('white-content');
+        });
+
+        $('.dark-badge').click(function() {
+          $('body').removeClass('white-content');
+        });
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "black-dashboard-free"
+      });
+  </script>
+<script>
+  type = ['primary', 'info', 'success', 'warning', 'danger'];
+
+demo = {
+  initPickColor: function() {
+    $('.pick-class-label').click(function() {
+      var new_class = $(this).attr('new-class');
+      var old_class = $('#display-buttons').attr('data-class');
+      var display_div = $('#display-buttons');
+      if (display_div.length) {
+        var display_buttons = display_div.find('.btn');
+        display_buttons.removeClass(old_class);
+        display_buttons.addClass(new_class);
+        display_div.attr('data-class', new_class);
+      }
+    });
+  },
+
+  initDocChart: function() {
+    chartColor = "#FFFFFF";
+
+    // General configuration for the charts with Line gradientStroke
+    gradientChartOptionsConfiguration = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+      tooltips: {
+        bodySpacing: 4,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest",
+        xPadding: 10,
+        yPadding: 10,
+        caretPadding: 10
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+          display: 0,
+          gridLines: 0,
+          ticks: {
+            display: false
+          },
+          gridLines: {
+            zeroLineColor: "transparent",
+            drawTicks: false,
+            display: false,
+            drawBorder: false
+          }
+        }],
+        xAxes: [{
+          display: 0,
+          gridLines: 0,
+          ticks: {
+            display: false
+          },
+          gridLines: {
+            zeroLineColor: "transparent",
+            drawTicks: false,
+            display: false,
+            drawBorder: false
+          }
+        }]
+      },
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          top: 15,
+          bottom: 15
+        }
+      }
+    };
+
+    ctx = document.getElementById('lineChartExample').getContext("2d");
+
+    gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+    gradientStroke.addColorStop(0, '#80b6f4');
+    gradientStroke.addColorStop(1, chartColor);
+
+    gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
+    gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
+    gradientFill.addColorStop(1, "rgba(249, 99, 59, 0.40)");
+
+    myChart = new Chart(ctx, {
+      type: 'line',
+      responsive: true,
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Active Users",
+          borderColor: "#f96332",
+          pointBorderColor: "#FFF",
+          pointBackgroundColor: "#f96332",
+          pointBorderWidth: 2,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 1,
+          pointRadius: 4,
+          fill: true,
+          backgroundColor: gradientFill,
+          borderWidth: 2,
+          data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 630]
+        }]
+      },
+      options: gradientChartOptionsConfiguration
+    });
+  },
+
+  initDashboardPageCharts: function() {
+
+    gradientChartOptionsConfigurationWithTooltipBlue = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+          barPercentage: 1.6,
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.0)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            suggestedMin: 60,
+            suggestedMax: 125,
+            padding: 20,
+            fontColor: "#2380f7"
+          }
+        }],
+
+        xAxes: [{
+          barPercentage: 1.6,
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            padding: 20,
+            fontColor: "#2380f7"
+          }
+        }]
+      }
+    };
+
+    gradientChartOptionsConfigurationWithTooltipPurple = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+          barPercentage: 1.6,
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.0)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            suggestedMin: 60,
+            suggestedMax: 125,
+            padding: 20,
+            fontColor: "#9a9a9a"
+          }
+        }],
+
+        xAxes: [{
+          barPercentage: 1.6,
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(225,78,202,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            padding: 20,
+            fontColor: "#9a9a9a"
+          }
+        }]
+      }
+    };
+
+    gradientChartOptionsConfigurationWithTooltipOrange = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+          barPercentage: 1.6,
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.0)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            suggestedMin: 50,
+            suggestedMax: 110,
+            padding: 20,
+            fontColor: "#ff8a76"
+          }
+        }],
+
+        xAxes: [{
+          barPercentage: 1.6,
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(220,53,69,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            padding: 20,
+            fontColor: "#ff8a76"
+          }
+        }]
+      }
+    };
+
+    gradientChartOptionsConfigurationWithTooltipGreen = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+          barPercentage: 1.6,
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.0)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            suggestedMin: 50,
+            suggestedMax: 125,
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }],
+
+        xAxes: [{
+          barPercentage: 1.6,
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(0,242,195,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }]
+      }
+    };
+
+
+    gradientBarChartConfiguration = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            suggestedMin: 60,
+            suggestedMax: 120,
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }],
+
+        xAxes: [{
+
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }]
+      }
+    };
+
+    var ctx = document.getElementById("chartLinePurple").getContext("2d");
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.2)');
+    gradientStroke.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
+
+    var data = {
+      labels: ['Dom', 'Seg', 'Qua', 'Qui', 'Sex', 'Sab'],
+      datasets: [{
+        label: "Data",
+        fill: true,
+        backgroundColor: gradientStroke,
+        borderColor: '#ff6900',
+        borderWidth: 2,
+        borderDash: [],
+        borderDashOffset: 0.0,
+        pointBackgroundColor: '#ff6900',
+        pointBorderColor: 'rgba(255,255,255,0)',
+        pointHoverBackgroundColor: '#d048b6',
+        pointBorderWidth: 20,
+        pointHoverRadius: 4,
+        pointHoverBorderWidth: 15,
+        pointRadius: 4,
+        data: [80, 100, 70, 80, 120, 80],
+      }]
+    };
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: gradientChartOptionsConfigurationWithTooltipPurple
+    });
+
+
+    var ctxGreen = document.getElementById("chartLineGreen").getContext("2d");
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(66,134,121,0.15)');
+    gradientStroke.addColorStop(0.4, 'rgba(66,134,121,0.0)'); //green colors
+    gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
+
+    var data = {
+      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+      datasets: [{
+        label: "My First dataset",
+        fill: true,
+        backgroundColor: gradientStroke,
+        borderColor: '#00d6b4',
+        borderWidth: 2,
+        borderDash: [],
+        borderDashOffset: 0.0,
+        pointBackgroundColor: '#00d6b4',
+        pointBorderColor: 'rgba(255,255,255,0)',
+        pointHoverBackgroundColor: '#00d6b4',
+        pointBorderWidth: 20,
+        pointHoverRadius: 4,
+        pointHoverBorderWidth: 15,
+        pointRadius: 4,
+        data: [90, 27, 60, 12, 80],
+      }]
+    };
+
+    var myChart = new Chart(ctxGreen, {
+      type: 'line',
+      data: data,
+      options: gradientChartOptionsConfigurationWithTooltipGreen
+
+    });
+
+
+
+    var vl = 0;
+    var chart_litros = [0,0,0,0,0,0];
+    var chart_m3 = [0,0,0,0,0,0];
+    var chart_ml = [0,0,0,0,0,0];
+    {% for meter in meters %}
+
+        var array = [];
+        var mes = [];
+        data_month = [];
+        var d = new Date();
+        monthDB = '{{ meter.datetime|date:'n' }}'
+        dayDB = '{{ meter.datetime|date:'j' }}'
+        nmDayDB = '{{ meter.datetime|date:'D' }}'
+
+        //console.log(monthDB)
+
+
+        for( var i = 6; i >= 0; i-- )
+        {
+            var m = d.getMonth();
+            var day = d.getDay();
+
+            //console.log(dayDB, nmDayDB, day)
+
+            mes[i] = m
+
+            //console.log(monthDB, m)
+
+            if (monthDB == m){
+
+              chart_ml[i-2] = ({{ meter.flowrate }} )
+              chart_litros[i-2] = Math.trunc(chart_ml[i-2] / 1000);
+              chart_m3[i-2] = (chart_ml[i-2] / 1000000)
+
+            }else{
+
+              chart_litros[i-2] += 0;
+              chart_m3[i-2] += 0;
+              chart_ml[i-2] += 0;
+            }
+
+
+
+            d.setMonth( m - 1 );
+
+            if( d.getMonth() != m - 1 && (d.getMonth() != 11 || (m == 11 && d.getDate() == 1)))
+                d.setDate(0);
+
+            array[i] = new Date(d);
+        }
+
+        var date = new Date();
+        var mes_atual = date.getMonth() + 1;
+
+         if (monthDB == mes_atual){
+              chart_ml[5] = ({{ meter.flowrate }} )
+              chart_litros[5] = Math.trunc(chart_ml[5] / 1000);
+              chart_m3[5] = (chart_ml[5] / 1000000)
+
+              conta = 0.00;
+              conta = ((chart_litros[5] * 2.94)*0.09);
+
+
+              document.getElementById('custo').innerHTML = '<i class="tim-icons icon-money-coins text-success"></i> ' + conta.toFixed(2);
+
+
+            }
+      var meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul","Ago","Set","Out","Nov","Dez"];
+
+      var chart_labels = [meses[mes[1]], meses[mes[2]], meses[mes[3]], meses[mes[4]], meses[mes[5]], meses[mes[6]]];
+
+
+    {% endfor %}
+        var tp = "l";
+       chart_data = chart_litros;
+
+   //SCRIPT REAL TIME API SOURCE
+ /* if (!!window.EventSource) {
+
+    try{
+      var source = new EventSource('http://192.168.43.104/events');
+
+      setInterval(function() {
+       source.addEventListener('totalMilliLitres', function(e) {
+                totalMilliLitres = e.data;
+                console.log(totalMilliLitres)
+                chart_ml[5] = totalMilliLitres
+                chart_litros[5] = Math.trunc(chart_ml[5] / 1000) ;
+                chart_m3[5] = (chart_ml[5] / 1000000)
+                console.log(tp)
+                var data = myChartData.config.data;
+                if(tp == "m3"){
+                  data.datasets[0].data = chart_m3;
+                }else if(tp == "ml"){
+                  data.datasets[0].data = chart_ml;
+                }else if(tp == "l"){
+                  data.datasets[0].data = chart_litros;
+                }
+
+                data.labels = chart_labels;
+                myChartData.update();
+         }, false);
+    }, 50);
+    } catch(ex){
+      console.log(ex);
+    }
+
+
+  }*/
+    var ctx = document.getElementById("chartBig1").getContext('2d');
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 100);
+
+    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
+    gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
+    var config = {
+      type: 'line',
+      data: {
+        labels: chart_labels,
+        datasets: [{
+          label: "Medição: ",
+          fill: true,
+          backgroundColor: gradientStroke,
+          borderColor: '#ff6900',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: '#ff6900',
+          pointBorderColor: 'rgba(255,255,255,0)',
+          pointHoverBackgroundColor: '#d346b1',
+          pointBorderWidth: 20,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 15,
+          pointRadius: 4,
+          data: chart_data,
+        }]
+      },
+      options: gradientChartOptionsConfigurationWithTooltipPurple
+    };
+    var myChartData = new Chart(ctx, config);
+
+
+
+    $("#0").click(function() {
+      tp = "l"
+      var chart_data = chart_litros
+      var data = myChartData.config.data;
+      data.datasets[0].data = chart_data;
+      data.labels = chart_labels;
+      myChartData.update();
+    });
+    $("#1").click(function() {
+      tp = 'm3'
+      var chart_data = chart_m3;
+      var data = myChartData.config.data;
+      data.datasets[0].data = chart_data;
+      data.labels = chart_labels;
+      myChartData.update();
+    });
+
+    $("#2").click(function() {
+      tp = 'ml'
+      var chart_data = chart_ml;
+      var data = myChartData.config.data;
+      data.datasets[0].data = chart_data;
+      data.labels = chart_labels;
+      myChartData.update();
+    });
+
+
+    var ctx = document.getElementById("CountryChart").getContext("2d");
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(29,140,248,0.2)');
+    gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
+
+
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      responsive: true,
+      legend: {
+        display: false
+      },
+      data: {
+        labels: ['Nov', 'Dez', 'Jan', 'Fev', 'Mar', 'Abr'],
+        datasets: [{
+          label: "Custo",
+          fill: true,
+          backgroundColor: gradientStroke,
+          hoverBackgroundColor: gradientStroke,
+          borderColor: '#00d6b4',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          data: [53, 20, 10, 80, 100, 45],
+        }]
+      },
+      options: gradientBarChartConfiguration
+    });
+
+  },
+
+  initGoogleMaps: function() {
+    var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+    var mapOptions = {
+      zoom: 13,
+      center: myLatlng,
+      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+      styles: [{
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#1d2c4d"
+          }]
+        },
+        {
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#8ec3b9"
+          }]
+        },
+        {
+          "elementType": "labels.text.stroke",
+          "stylers": [{
+            "color": "#1a3646"
+          }]
+        },
+        {
+          "featureType": "administrative.country",
+          "elementType": "geometry.stroke",
+          "stylers": [{
+            "color": "#4b6878"
+          }]
+        },
+        {
+          "featureType": "administrative.land_parcel",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#64779e"
+          }]
+        },
+        {
+          "featureType": "administrative.province",
+          "elementType": "geometry.stroke",
+          "stylers": [{
+            "color": "#4b6878"
+          }]
+        },
+        {
+          "featureType": "landscape.man_made",
+          "elementType": "geometry.stroke",
+          "stylers": [{
+            "color": "#334e87"
+          }]
+        },
+        {
+          "featureType": "landscape.natural",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#023e58"
+          }]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#283d6a"
+          }]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#6f9ba5"
+          }]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "labels.text.stroke",
+          "stylers": [{
+            "color": "#1d2c4d"
+          }]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "#023e58"
+          }]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#3C7680"
+          }]
+        },
+        {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#304a7d"
+          }]
+        },
+        {
+          "featureType": "road",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#98a5be"
+          }]
+        },
+        {
+          "featureType": "road",
+          "elementType": "labels.text.stroke",
+          "stylers": [{
+            "color": "#1d2c4d"
+          }]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#2c6675"
+          }]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "#9d2a80"
+          }]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry.stroke",
+          "stylers": [{
+            "color": "#9d2a80"
+          }]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#b0d5ce"
+          }]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "labels.text.stroke",
+          "stylers": [{
+            "color": "#023e58"
+          }]
+        },
+        {
+          "featureType": "transit",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#98a5be"
+          }]
+        },
+        {
+          "featureType": "transit",
+          "elementType": "labels.text.stroke",
+          "stylers": [{
+            "color": "#1d2c4d"
+          }]
+        },
+        {
+          "featureType": "transit.line",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "#283d6a"
+          }]
+        },
+        {
+          "featureType": "transit.station",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#3a4762"
+          }]
+        },
+        {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#0e1626"
+          }]
+        },
+        {
+          "featureType": "water",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#4e6d70"
+          }]
+        }
+      ]
+    };
+
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      title: "Hello World!"
+    });
+
+    // To add the marker to the map, call setMap();
+    marker.setMap(map);
+  },
+
+  showNotification: function(from, align) {
+    color = Math.floor((Math.random() * 4) + 1);
+
+    $.notify({
+      icon: "tim-icons icon-bell-55",
+      message: "Welcome to <b>Black Dashboard</b> - a beautiful freebie for every web developer."
+
+    }, {
+      type: type[color],
+      timer: 8000,
+      placement: {
+        from: from,
+        align: align
+      }
+    });
+  }
+
+};
+
+</script>
+    <script>
+       {% if request.user.is_authenticated == false%}
+          var aut = "f"
+        {% endif %}
+
+        if (aut == "f")
+              window.location.href = "/login";
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
