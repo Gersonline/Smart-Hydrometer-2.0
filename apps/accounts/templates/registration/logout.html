@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+
+    <h1>Sair</h1>
+    <span>Você tem certeza que deseja sair?</span>
+    <form class="account"  method="post" action="{% url 'account_logout' %}">
+      {% csrf_token %}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+      {% endif %}
+      <button class="btn-cancel my-2" type="submit">Sair</button>
+    </form>
+
+</div>
+{% endblock content %}

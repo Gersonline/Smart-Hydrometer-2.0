@@ -157,7 +157,7 @@
                     <img src="{% static 'assets/img/anime3.png' %}" alt="Profile Photo">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
-                  <a href="logout/">
+                  <a href="{% url 'logout' %}">
                     <p class="d-lg-none">
                       Log out
                     </p>
@@ -167,7 +167,7 @@
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
                   <li class="dropdown-divider"></li>
-                  <li class="nav-link"><a href="logout" class="nav-item dropdown-item">Log out</a></li>
+                  <li class="nav-link"><a href="{% url 'logout' %}" class="nav-item dropdown-item">Log out</a></li>
                 </ul>
               </li>
               <li class="separator d-lg-none"></li>
@@ -1633,7 +1633,7 @@ demo = {
         {% endif %}
 
         if (aut == "f")
-              window.location.href = "/login";
+              window.location.href = "accounts/login";
     </script>
 </body>
 
