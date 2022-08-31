@@ -426,11 +426,11 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
+          </div>-->
+          <div class="col-lg-12 col-md-12">
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title"> Simple Table</h4>
+                <h4 class="card-title"> Hidròmetros </h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -438,118 +438,49 @@
                     <thead class=" text-primary">
                       <tr>
                         <th>
-                          Name
+                          Nome
                         </th>
                         <th>
-                          Country
+                          IP
                         </th>
                         <th>
-                          City
+                          Macadress
+                        </th>
+                        <th>
+                          Status
                         </th>
                         <th class="text-center">
-                          Salary
+                          Custo
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                    {% for hydrometer in hydrometers %}
+                      <tr class='clickable-row' id="{{hydrometer.id}}" data-href="{% url 'dashboard' hydrometer.id %}" data="">
                         <td>
-                          Dakota Rice
+                          {{hydrometer.id}}
+                          {{hydrometer.description}}
                         </td>
                         <td>
-                          Niger
+                          {{hydrometer.ip}}
                         </td>
                         <td>
-                          Oud-Turnhout
+                          {{hydrometer.macadress}}
                         </td>
+                        {%if hydrometer.read_state == True %}
+                        <td>
+                          Ativo
+                        </td>
+                        {%else%}
+                        <td>
+                          Inativo
+                        </td>
+                        {%endif%}
                         <td class="text-center">
                           $36,738
                         </td>
                       </tr>
-                      <tr>
-                        <td>
-                          Minerva Hooper
-                        </td>
-                        <td>
-                          Curaçao
-                        </td>
-                        <td>
-                          Sinaai-Waas
-                        </td>
-                        <td class="text-center">
-                          $23,789
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Sage Rodriguez
-                        </td>
-                        <td>
-                          Netherlands
-                        </td>
-                        <td>
-                          Baileux
-                        </td>
-                        <td class="text-center">
-                          $56,142
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Philip Chaney
-                        </td>
-                        <td>
-                          Korea, South
-                        </td>
-                        <td>
-                          Overland Park
-                        </td>
-                        <td class="text-center">
-                          $38,735
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Doris Greene
-                        </td>
-                        <td>
-                          Malawi
-                        </td>
-                        <td>
-                          Feldkirchen in Kärnten
-                        </td>
-                        <td class="text-center">
-                          $63,542
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Mason Porter
-                        </td>
-                        <td>
-                          Chile
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $78,615
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Jon Porter
-                        </td>
-                        <td>
-                          Portugal
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $98,615
-                        </td>
-                      </tr>
+                    {% endfor %}
                     </tbody>
                   </table>
                 </div>
@@ -557,7 +488,7 @@
             </div>
           </div>
         </div>
-      </div>-->
+      </div>
       <footer class="footer">
         <div class="container-fluid">
           <ul class="nav">
@@ -771,6 +702,21 @@
       });
   </script>
 <script>
+
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+    $(".clickable-row").mouseover(function() {
+      var colorbkg = $('.sidebar-wrapper').css("color");
+      $(this).css('background-color','silver');
+    });
+    $(".clickable-row").mouseleave(function() {
+        $(this).css('background-color','');
+    });
+    $('.clickable-row').css('cursor','pointer');
+});
+
   type = ['primary', 'info', 'success', 'warning', 'danger'];
 
 demo = {
@@ -1627,14 +1573,6 @@ demo = {
 };
 
 </script>
-    <script>
-       {% if request.user.is_authenticated == false%}
-          var aut = "f"
-        {% endif %}
-
-        if (aut == "f")
-              window.location.href = "accounts/login";
-    </script>
 </body>
 
 </html>
