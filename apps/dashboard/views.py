@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from .models import Meter, Hydrometer
 from django.shortcuts import render, redirect
 
-@login_required(login_url='accounts/login/')
+@login_required(login_url='/accounts/login/')
 def load_dashboard(request, id_hydrometer=None):
     #id_hydrometer = 3
     usuario = request.user
