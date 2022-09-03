@@ -32,14 +32,18 @@ def ip_meters():
 # Função para inserir dados no banco
 def insert_db(id, ip, client_id):
     dt = datetime.datetime.now()
-    requisition = requests.get(f'http://{ip}/api')
-    dicRequisition = json.loads(requisition.content)
+    try:
+        requisition = requests.get(f'http://{ip}/api')
+        dicRequisition = json.loads(requisition.content)
+    except:
+        return 1
 
     #print(dicRequisition.keys())
     ssid = dicRequisition['ssid']
     ip_hydrometer = dicRequisition['ip']
     totalMilliLitres = dicRequisition['totalMilliLitres']
     flowRate = dicRequisition['flowRate']
+    macAddress = dicRequisition['macAddress']
 
     #print(totalMilliLitres, flowRate, dt)
 
@@ -47,6 +51,10 @@ def insert_db(id, ip, client_id):
            INSERT into public.meter (flowrate, datetime, hydrometer_id, client_id)
            values('%s','%s','%s','%s');
            """ %(totalMilliLitres, dt, id, client_id)
+    sql = sql + """ 
+            UPDATE public.hydrometer SET macadress = '%s'
+             WHERE id = '%s' AND client_id = '%s'; 
+             """ %(macAddress, id, client_id)
 
     #print(sql)
     con = con_db()

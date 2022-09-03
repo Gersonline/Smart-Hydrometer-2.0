@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import *
 
-# Register your models here.
+class MeterAdmin(admin.ModelAdmin):
+    model = Meter
+
+admin.site.register(Hydrometer)
+admin.site.register(Meter)

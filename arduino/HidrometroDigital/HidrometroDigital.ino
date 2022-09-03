@@ -30,8 +30,10 @@
 #include <Adafruit_Sensor.h>*/
 
 // Replace with your network credentials
-const char* ssid = "Gersonline";
-const char* password = "carinegata";
+//const char* ssid = "Gersonline";
+//const char* password = "carinegata";
+const char* ssid = "TP-LINK_A2CE";
+const char* password = "07621895";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
@@ -300,9 +302,10 @@ void setup() {
       DynamicJsonDocument json(1024);
       json["status"] = "ok";
       json["ssid"] = WiFi.SSID();
-      json["ip"] = WiFi.localIP().toString();
+      json["ip"] = WiFi.localIP().toString(); 
       json["totalMilliLitres"] = totalMilliLitres;
       json["flowRate"] = flowRate;
+      json["macAddress"] = WiFi.macAddress();
 
       serializeJson(json, *response);
       request->send(response);
