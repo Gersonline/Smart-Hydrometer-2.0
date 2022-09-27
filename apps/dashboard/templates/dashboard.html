@@ -77,7 +77,7 @@
             </a>
           </li>-->
           <li>
-            <a href="./user.html">
+            <a href="{% url 'profile' %}">
               <i class="tim-icons icon-single-02"></i>
               <p>Perfil</p>
             </a>
@@ -430,7 +430,7 @@
           <div class="col-lg-12 col-md-12">
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title"> Hidròmetros </h4>
+                <h4 class="card-title"> Hidrômetros </h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -458,7 +458,6 @@
                     {% for hydrometer in hydrometers %}
                       <tr class='clickable-row' id="{{hydrometer.id}}" data-href="{% url 'dashboard' hydrometer.id %}" data="">
                         <td>
-                          {{hydrometer.id}}
                           {{hydrometer.description}}
                         </td>
                         <td>
