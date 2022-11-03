@@ -12,7 +12,8 @@ def load_dashboard(request, id_hydrometer=None):
     if id_hydrometer:
         meter = Meter.objects.select_related('hydrometer').filter(client=usuario, hydrometer=id_hydrometer)
     else:
-        meter = Meter.objects.select_related('hydrometer').filter(client=usuario)
+        hydrometer_id = Hydrometer.objects.select_related('client').filter(client=usuario).first()
+        meter = Meter.objects.select_related('hydrometer').filter(client=usuario, hydrometer=hydrometer_id.id)
 
     hydrometer = Hydrometer.objects.select_related('client').filter(client=usuario)
     #print(meter)

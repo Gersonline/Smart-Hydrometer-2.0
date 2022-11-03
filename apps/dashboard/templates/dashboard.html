@@ -53,7 +53,7 @@
         </div>
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="/dashboard/">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
@@ -121,7 +121,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+            <a class="navbar-brand" href="/dashboard/">Dashboard <br> <label id="espname"></label></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -147,7 +147,7 @@
                   <li class="nav-link"><a href="#" class="nav-item dropdown-item">adm: Seus gastos estão acima da média.</a></li>
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">adm: Sua fatura está atrasada!</a></li>
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Noticia: Já ouviu falar no dia da terra?</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">adm: Bem-vindo ao Smart Hydrometer!</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">adm: Bem-vindo ao Hidrometro Inteligente!</a></li>
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">adm: Olá FAM!</a></li>
                 </ul>
               </li>
@@ -542,6 +542,7 @@
           <span class="badge dark-badge ml-2"></span>
           <span class="color-label">DARK MODE</span>
         </li>
+        <!--
         <li class="button-container">
           <a href="https://www.creative-tim.com/product/black-dashboard" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
           <a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block btn-round">
@@ -556,6 +557,7 @@
           <br>
           <a class="github-button" href="https://github.com/creativetimofficial/black-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
         </li>
+        -->
       </ul>
     </div>
   </div>
@@ -1154,6 +1156,7 @@ demo = {
         monthDB = '{{ meter.datetime|date:'n' }}'
         dayDB = '{{ meter.datetime|date:'j' }}'
         nmDayDB = '{{ meter.datetime|date:'D' }}'
+        document.getElementById('espname').innerHTML = '{{ meter.hydrometer.description }}';
 
         //console.log(monthDB)
 
