@@ -29,7 +29,7 @@ There are 3 ways to access the data meters:
 
 ### Global Website Dashboard:
 
-<img src="imgs/dash_resume.png" alt="dash_resume" width="600"/>
+<img src="imgs/dashboard_resume.png" alt="dash_resume" width="600"/>
 
 ### Macro Views of the project:
 
